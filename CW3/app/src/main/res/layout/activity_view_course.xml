@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.cw3.viewmodels.ViewCourseVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.ViewCourse"
+        tools:layout_editor_absoluteX="-9dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/imageViewHeader"
+            android:layout_width="91dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="107dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/image_given"
+            android:textAlignment="center"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mapHeaderView"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewPoints" />
+
+        <TextView
+            android:id="@+id/weatherViewValue"
+            android:layout_width="190dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="2dp"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toTopOf="@+id/weightValueView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/weatheHeaderView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/weatheHeaderView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="@string/weather"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/weightHeaderView"
+            app:layout_constraintEnd_toStartOf="@+id/weightHeaderView"
+            app:layout_constraintStart_toEndOf="@+id/courseNameView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ratingViewHeader"
+            android:layout_width="91dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="238dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginBottom="1dp"
+            android:text="@string/rating_given"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+
+        <TextView
+            android:id="@+id/mapHeaderView"
+            android:layout_width="105dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="3dp"
+            android:text="@string/map_route"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/map"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewPoints" />
+
+        <TextView
+            android:id="@+id/SplitsHeaderView"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_100m_splits"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewPoints"
+            app:layout_constraintEnd_toStartOf="@+id/ratingBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+
+        <TextView
+            android:id="@+id/weightValueView"
+            android:layout_width="80dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="69dp"
+            android:layout_marginBottom="4dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/weightHeaderView"
+            app:layout_constraintTop_toBottomOf="@+id/weatherViewValue" />
+
+        <TextView
+            android:id="@+id/weightHeaderView"
+            android:layout_width="80dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/weight_kg_colon"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+            app:layout_constraintEnd_toStartOf="@+id/weightValueView"
+            app:layout_constraintStart_toEndOf="@+id/courseNameView"
+            app:layout_constraintTop_toBottomOf="@+id/weatheHeaderView" />
+
+        <EditText
+            android:id="@+id/courseNameView"
+            android:layout_width="167dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/course_name_default"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColorHint="#78909C"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+            app:layout_constraintEnd_toStartOf="@+id/weatheHeaderView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPoints"
+            android:layout_width="405dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="250dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/finishView"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mapHeaderView"
+            tools:context=".activities.ViewCourse"
+            tools:layout="@android:layout/simple_gallery_item" />
+
+        <Button
+            android:id="@+id/deleteCourse"
+            android:layout_width="161dp"
+            android:layout_height="49dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/delete_course"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/finishView"
+            app:layout_constraintTop_toBottomOf="@+id/map" />
+
+        <Button
+            android:id="@+id/finishView"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="153dp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/finish"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/deleteCourse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/map" />
+
+        <TableLayout
+            android:id="@+id/tableLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/ratingViewHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/courseNameView">
+
+            <TableRow
+                android:layout_width="242dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/startDateView"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/start_datetime"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/caloriesViewHeader"
+                    android:layout_width="119dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/calories_burnt"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/endDateView"
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/end_datetime"
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/startDateViewValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/caloriesViewValue"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/endDateViewValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/distanceView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/total_distance_m"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/averagePaceView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/average_pace"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/timeView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/total_time_hh_mm_ss"
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/distanceViewValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/averagePaceViewValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/timeViewValue"
+                    android:layout_width="143dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+
+            </TableRow>
+        </TableLayout>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:contentDescription="@string/rating_given"
+            android:numStars="5"
+            android:stepSize="1"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewPoints"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/SplitsHeaderView"
+            app:layout_constraintTop_toBottomOf="@+id/ratingViewHeader" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="5dp"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/no_image_given"
+            app:layout_constraintBottom_toTopOf="@+id/deleteCourse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/map"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewHeader" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

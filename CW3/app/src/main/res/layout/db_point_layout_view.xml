@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="54dp">
+
+                <TextView
+                    android:id="@+id/pointIDView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/point_id"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/distanceViewHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/distance_per_100m"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/paceViewHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/pace_m_s"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/timeChangeView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/time_change_mm_ss"
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/pointIDViewValue"
+                    android:layout_width="34dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/distancePerViewValue"
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/pacePerViewValue"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/timeChangeViewValue"
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:textAlignment="center" />
+            </TableRow>
+
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
